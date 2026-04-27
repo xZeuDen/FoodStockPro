@@ -43,6 +43,14 @@
                 <ul class="navbar-nav ms-auto">
                     {% if user.is_authenticated %}
                     <li class="nav-item">
+                        <span class="navbar-text user-role-label">
+                            {{ user.get_full_name|default:user.username }}
+                            {% if user.profile %}
+                                | {{ user.profile.get_role_display }}
+                            {% endif %}
+                        </span>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'accounts:profile' %}">Profile</a>
                     </li>
                     <li class="nav-item">
@@ -81,7 +89,7 @@
 
     <footer class="site-footer py-4">
         <div class="container text-center">
-            <span>FoodStockPro - Restaurant Purchase Order and Inventory Management</span>
+            <span>FoodStockPro | Web Framework Development Project</span>
         </div>
     </footer>
 
