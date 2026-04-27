@@ -93,19 +93,11 @@ python manage.py test
 At the time of writing, 20 automated tests pass.
 
 ## Deployment
-Deployment target: Render Web Service.
-
-Build command:
-
-```bash
-./build.sh
-```
-
-Start command:
-
-```bash
-gunicorn foodstockpro.wsgi:application
-```
+- Platform: Render
+- Live website: https://foodstockpro.onrender.com/
+- Purchase Orders page: https://foodstockpro.onrender.com/purchasing/
+- Build command: `bash build.sh`
+- Start command: `gunicorn foodstockpro.wsgi:application`
 
 Recommended Render environment variables:
 
@@ -115,10 +107,18 @@ Recommended Render environment variables:
 
 Render can also provide a `DATABASE_URL` environment variable when using a PostgreSQL database. If `DATABASE_URL` is not set, the project falls back to local SQLite for development.
 
-Sample data is created by:
+The deployed site uses the seeded sample data from:
 
 ```bash
 python manage.py seed_foodstockpro
 ```
 
 The Render build script runs migrations and seeds the FoodStockPro sample users and data automatically.
+
+Test accounts on the deployed site:
+
+- `admin / password`
+- `manager1 / password`
+- `kitchen1 / password`
+- `supplier1 / password`
+- `finance1 / password`
