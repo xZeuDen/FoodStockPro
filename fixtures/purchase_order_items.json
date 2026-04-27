@@ -1,0 +1,42 @@
+[
+{
+  "model": "purchasing.purchaseorderitem",
+  "pk": 1,
+  "fields": {
+    "purchase_order": 1,
+    "ingredient": 2,
+    "quantity": "10.00",
+    "unit_price": "6.50"
+  }
+},
+{
+  "model": "purchasing.purchaseorderitem",
+  "pk": 2,
+  "fields": {
+    "purchase_order": 1,
+    "ingredient": 4,
+    "quantity": "12.00",
+    "unit_price": "1.10"
+  }
+},
+{
+  "model": "purchasing.purchaseorderitem",
+  "pk": 3,
+  "fields": {
+    "purchase_order": 2,
+    "ingredient": 3,
+    "quantity": "20.00",
+    "unit_price": "1.20"
+  }
+},
+{
+  "model": "purchasing.purchaseorderitem",
+  "pk": 4,
+  "fields": {
+    "purchase_order": 2,
+    "ingredient": 6,
+    "quantity": "10.00",
+    "unit_price": "1.90"
+  }
+}
+]

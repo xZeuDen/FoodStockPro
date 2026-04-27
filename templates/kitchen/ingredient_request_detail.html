@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Ingredient Request | FoodStockPro{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <a class="btn btn-outline-secondary" href="{% url 'kitchen:ingredient_request_list' %}">Back to Requests</a>
+    {% if user_role == "MANAGER" %}
+    <a class="btn btn-outline-primary" href="{% url 'kitchen:ingredient_request_review' ingredient_request.pk %}">Review Request</a>
+    {% endif %}
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <h1>Ingredient Request</h1>
+        <p><strong>Ingredient:</strong> {{ ingredient_request.ingredient.name }}</p>
+        <p><strong>Quantity:</strong> {{ ingredient_request.quantity }}</p>
+        <p><strong>Reason:</strong> {{ ingredient_request.reason|default:"-" }}</p>
+        <p><strong>Status:</strong> {{ ingredient_request.get_status_display }}</p>
+        <p><strong>Requested by:</strong> {{ ingredient_request.requested_by|default:"-" }}</p>
+        <p><strong>Created at:</strong> {{ ingredient_request.created_at }}</p>
+        <p><strong>Manager note:</strong> {{ ingredient_request.manager_note|default:"-" }}</p>
+        <p><strong>Reviewed by:</strong> {{ ingredient_request.reviewed_by|default:"-" }}</p>
+        <p><strong>Reviewed at:</strong> {{ ingredient_request.reviewed_at|default:"-" }}</p>
+    </div>
+</div>
+{% endblock %}

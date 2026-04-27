@@ -1,0 +1,47 @@
+[
+{
+  "model": "inventory.ingredientcategory",
+  "pk": 1,
+  "fields": {
+    "name": "Meat",
+    "description": "",
+    "created_at": "2026-04-27T19:25:49.646Z"
+  }
+},
+{
+  "model": "inventory.ingredientcategory",
+  "pk": 2,
+  "fields": {
+    "name": "Vegetables",
+    "description": "",
+    "created_at": "2026-04-27T19:25:54.785Z"
+  }
+},
+{
+  "model": "inventory.ingredientcategory",
+  "pk": 3,
+  "fields": {
+    "name": "Dairy",
+    "description": "",
+    "created_at": "2026-04-27T19:25:58.664Z"
+  }
+},
+{
+  "model": "inventory.ingredientcategory",
+  "pk": 4,
+  "fields": {
+    "name": "Dry Goods",
+    "description": "",
+    "created_at": "2026-04-27T19:26:04.148Z"
+  }
+},
+{
+  "model": "inventory.ingredientcategory",
+  "pk": 5,
+  "fields": {
+    "name": "Drinks",
+    "description": "",
+    "created_at": "2026-04-27T19:35:32.103Z"
+  }
+}
+]

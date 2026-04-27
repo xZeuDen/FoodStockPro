@@ -1,0 +1,164 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$cbFU1rGns2Q4KN2tnAWEkW$PV9MnjCDXYjIRZ2rtllN/PxoX0AfxQHHnbwQlaftnoQ=",
+    "last_login": "2026-04-27T19:28:03.444Z",
+    "is_superuser": false,
+    "username": "User",
+    "first_name": "Denis",
+    "last_name": "Maftei",
+    "email": "denis.maftei04@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-27T19:02:32.359Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$ksdjOGhavVnJG0xGyet7lt$fdjxXQHD31r3D3G4DIS0EidPuHUEnkco7vFYq1OLGLQ=",
+    "last_login": "2026-04-27T19:03:34.782Z",
+    "is_superuser": false,
+    "username": "Supplier",
+    "first_name": "Denis",
+    "last_name": "Maftei",
+    "email": "B00162182@mytudublin.ie",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-27T19:03:34.375Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$FCWC1ppWRU5GPwfBRUIykT$Xc767odHBkTFJnFez43Amjp5/SqAjbXFxhJRfdqZg70=",
+    "last_login": "2026-04-27T19:27:16.568Z",
+    "is_superuser": false,
+    "username": "Kitchen",
+    "first_name": "Denis",
+    "last_name": "Maftei",
+    "email": "badarica12@yahoo.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-27T19:04:55.212Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$rH1Ma0G4ITLHPJ4xXzSwbY$/HMVZQzZwRDuYuT8w9UGZn4xM4VZrggi47ZHIVLMpas=",
+    "last_login": "2026-04-27T19:05:28.133Z",
+    "is_superuser": false,
+    "username": "Officer",
+    "first_name": "Denis",
+    "last_name": "Maftei",
+    "email": "badarica12.dm@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-27T19:05:27.725Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$Gbk2VcSmSonE55hFEXPjEZ$rMDuDKVUJTU75QDoqdYU3/K9rQCHv3btlFcgkAiVnAc=",
+    "last_login": "2026-04-27T19:08:58.229Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "Admin",
+    "last_name": "User",
+    "email": "admin@admin.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-04-27T19:08:29.298Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$1e6fCMcxlLZzI4T2mkahrk$NCb4iOILRjB0sPo3R3CGKw/uyQ3aPOjGqnEp5GanaFk=",
+    "last_login": "2026-04-27T19:36:04.499Z",
+    "is_superuser": false,
+    "username": "manager1",
+    "first_name": "Maria",
+    "last_name": "Manager",
+    "email": "manager1@foodstockpro.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-27T19:35:30.454Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$dSamuAmvoANU2RsGXke0FS$jmSrSWXH+X8R35DGzx1I2iuST8n3Vhaygvk0+ipsOZE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "kitchen1",
+    "first_name": "Kevin",
+    "last_name": "Chef",
+    "email": "kitchen1@foodstockpro.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-27T19:35:30.855Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$RVo0bryLDNpwcrSjTe3Dpz$n7NY3WiI8Bi2x3UY2135sKSMU0krGn60IRfbhCVQptQ=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "supplier1",
+    "first_name": "Sarah",
+    "last_name": "Supplier",
+    "email": "supplier1@freshfoods.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-27T19:35:31.277Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$6lXYErnYszFdKBDexvJSbt$yBZfWQfvnkHRzjpShx8181+JMvLQzyIWduFFBQHkDqw=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "finance1",
+    "first_name": "Fiona",
+    "last_name": "Finance",
+    "email": "finance1@foodstockpro.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-27T19:35:31.693Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

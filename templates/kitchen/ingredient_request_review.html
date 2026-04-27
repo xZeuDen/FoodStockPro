@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Review Ingredient Request | FoodStockPro{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-7">
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <h1 class="mb-3">Review Ingredient Request</h1>
+                <p class="text-muted">
+                    Managers can approve, reject, or mark this kitchen request as fulfilled.
+                </p>
+
+                <div class="alert alert-light border">
+                    <strong>Ingredient:</strong> {{ ingredient_request.ingredient.name }}<br>
+                    <strong>Quantity:</strong> {{ ingredient_request.quantity }}<br>
+                    <strong>Requested by:</strong> {{ ingredient_request.requested_by|default:"-" }}
+                </div>
+
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-success btn-lg" type="submit">Save</button>
+                    <a class="btn btn-outline-secondary btn-lg" href="{% url 'kitchen:ingredient_request_detail' ingredient_request.pk %}">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

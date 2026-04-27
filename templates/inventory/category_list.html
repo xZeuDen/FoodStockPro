@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Ingredient Categories | FoodStockPro{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h1>Ingredient Categories</h1>
+        <p class="text-muted mb-0">Group ingredients such as produce, dairy, meat, and dry goods.</p>
+    </div>
+    <a class="btn btn-outline-secondary" href="{% url 'inventory:ingredient_list' %}">Back to Ingredients</a>
+</div>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
+        <h2 class="h4 mb-3">Add Category</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-success" type="submit">Save Category</button>
+        </form>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped align-middle">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Number of Ingredients</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for category in categories %}
+            <tr>
+                <td>{{ category.name }}</td>
+                <td>{{ category.description|default:"-" }}</td>
+                <td>{{ category.ingredient_count }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3" class="text-center">No categories found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

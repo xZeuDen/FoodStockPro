@@ -1,0 +1,86 @@
+[
+{
+  "model": "inventory.ingredient",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "name": "Chicken Breast",
+    "unit": "grams",
+    "current_stock": "100.00",
+    "minimum_stock": "0.00",
+    "cost_per_unit": "8.99",
+    "is_active": true,
+    "created_at": "2026-04-27T19:26:41.155Z"
+  }
+},
+{
+  "model": "inventory.ingredient",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "name": "Chicken Fillet",
+    "unit": "kg",
+    "current_stock": "10.00",
+    "minimum_stock": "5.00",
+    "cost_per_unit": "6.50",
+    "is_active": true,
+    "created_at": "2026-04-27T19:35:32.109Z"
+  }
+},
+{
+  "model": "inventory.ingredient",
+  "pk": 3,
+  "fields": {
+    "category": 2,
+    "name": "Potatoes",
+    "unit": "kg",
+    "current_stock": "25.00",
+    "minimum_stock": "10.00",
+    "cost_per_unit": "1.20",
+    "is_active": true,
+    "created_at": "2026-04-27T19:35:32.115Z"
+  }
+},
+{
+  "model": "inventory.ingredient",
+  "pk": 4,
+  "fields": {
+    "category": 3,
+    "name": "Milk",
+    "unit": "litres",
+    "current_stock": "8.00",
+    "minimum_stock": "12.00",
+    "cost_per_unit": "1.10",
+    "is_active": true,
+    "created_at": "2026-04-27T19:35:32.121Z"
+  }
+},
+{
+  "model": "inventory.ingredient",
+  "pk": 5,
+  "fields": {
+    "category": 4,
+    "name": "Pasta",
+    "unit": "kg",
+    "current_stock": "15.00",
+    "minimum_stock": "6.00",
+    "cost_per_unit": "2.30",
+    "is_active": true,
+    "created_at": "2026-04-27T19:35:32.127Z"
+  }
+},
+{
+  "model": "inventory.ingredient",
+  "pk": 6,
+  "fields": {
+    "category": 5,
+    "name": "Orange Juice",
+    "unit": "litres",
+    "current_stock": "4.00",
+    "minimum_stock": "8.00",
+    "cost_per_unit": "1.90",
+    "is_active": true,
+    "created_at": "2026-04-27T19:35:32.133Z"
+  }
+}
+]

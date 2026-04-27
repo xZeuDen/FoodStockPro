@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Kitchen Ingredient Requests | FoodStockPro{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h1>Kitchen Ingredient Requests</h1>
+        <p class="text-muted mb-0">Request ingredients and review manager decisions.</p>
+    </div>
+    {% if user_role == "KITCHEN" %}
+    <a class="btn btn-success" href="{% url 'kitchen:ingredient_request_create' %}">Add Request</a>
+    {% endif %}
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped align-middle">
+        <thead>
+            <tr>
+                <th>Ingredient</th>
+                <th>Quantity</th>
+                <th>Requested By</th>
+                <th>Status</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for request_item in ingredient_requests %}
+            <tr>
+                <td>{{ request_item.ingredient.name }}</td>
+                <td>{{ request_item.quantity }}</td>
+                <td>{{ request_item.requested_by|default:"-" }}</td>
+                <td>{{ request_item.get_status_display }}</td>
+                <td>{{ request_item.created_at }}</td>
+                <td>
+                    <a class="btn btn-sm btn-outline-primary" href="{% url 'kitchen:ingredient_request_detail' request_item.pk %}">View</a>
+                    {% if user_role == "MANAGER" %}
+                    <a class="btn btn-sm btn-outline-secondary" href="{% url 'kitchen:ingredient_request_review' request_item.pk %}">Review</a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6" class="text-center">No ingredient requests found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

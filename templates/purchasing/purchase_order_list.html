@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Purchase Orders | FoodStockPro{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h1>Purchase Orders</h1>
+        <p class="text-muted mb-0">Track purchase orders and purchase order items.</p>
+    </div>
+    <div>
+        {% if user_role == "MANAGER" or user_role == "FINANCE" %}
+        <a class="btn btn-outline-secondary" href="{% url 'purchasing:supplier_list' %}">Suppliers</a>
+        {% endif %}
+        {% if user_role == "MANAGER" %}
+        <a class="btn btn-success" href="{% url 'purchasing:purchase_order_create' %}">Add Purchase Order</a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped align-middle">
+        <thead>
+            <tr>
+                <th>PO</th>
+                <th>Supplier</th>
+                <th>Order Date</th>
+                <th>Expected Delivery</th>
+                <th>Status</th>
+                <th>Total Cost</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in purchase_orders %}
+            <tr>
+                <td>PO-{{ order.id }}</td>
+                <td>{{ order.supplier.name }}</td>
+                <td>{{ order.order_date }}</td>
+                <td>{{ order.expected_delivery_date|default:"-" }}</td>
+                <td>{{ order.get_status_display }}</td>
+                <td>{{ order.total_cost }}</td>
+                <td>
+                    <a class="btn btn-sm btn-outline-primary" href="{% url 'purchasing:purchase_order_detail' order.pk %}">View</a>
+                    {% if user_role == "MANAGER" %}
+                    <a class="btn btn-sm btn-outline-secondary" href="{% url 'purchasing:purchase_order_update' order.pk %}">Edit</a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="7" class="text-center">No purchase orders found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

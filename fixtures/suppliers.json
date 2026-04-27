@@ -1,0 +1,28 @@
+[
+{
+  "model": "purchasing.supplier",
+  "pk": 1,
+  "fields": {
+    "name": "Fresh Foods Ltd",
+    "contact_name": "Sarah Supplier",
+    "email": "supplier1@freshfoods.com",
+    "phone": "0871111111",
+    "address": "Dublin Food Market",
+    "is_active": true,
+    "created_at": "2026-04-27T19:35:32.140Z"
+  }
+},
+{
+  "model": "purchasing.supplier",
+  "pk": 2,
+  "fields": {
+    "name": "Green Farm Produce",
+    "contact_name": "John Green",
+    "email": "orders@greenfarm.com",
+    "phone": "0872222222",
+    "address": "Laois Farm Road",
+    "is_active": true,
+    "created_at": "2026-04-27T19:35:32.145Z"
+  }
+}
+]

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} | FoodStockPro{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-7">
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <h1 class="mb-4">{{ title }}</h1>
+
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-success btn-lg" type="submit">Save</button>
+                    {% if supplier %}
+                    <a class="btn btn-outline-secondary btn-lg" href="{% url 'purchasing:supplier_detail' supplier.pk %}">Cancel</a>
+                    {% else %}
+                    <a class="btn btn-outline-secondary btn-lg" href="{% url 'purchasing:supplier_list' %}">Cancel</a>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

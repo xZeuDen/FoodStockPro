@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}Ingredients | FoodStockPro{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h1>Ingredients</h1>
+        <p class="text-muted mb-0">Manage food ingredients and stock levels.</p>
+    </div>
+    <div>
+        <a class="btn btn-success" href="{% url 'inventory:ingredient_create' %}">Add Ingredient</a>
+    </div>
+</div>
+
+<form class="row g-2 mb-4" method="get">
+    <div class="col-md-8">
+        <input class="form-control form-control-lg" type="text" name="q" value="{{ query }}" placeholder="Search by ingredient or category">
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-outline-success btn-lg w-100" type="submit">Search</button>
+    </div>
+</form>
+
+<div class="mb-3">
+    <a class="btn btn-outline-secondary" href="{% url 'inventory:category_list' %}">Categories</a>
+    <a class="btn btn-outline-secondary" href="{% url 'inventory:stock_movement_list' %}">Stock Movements</a>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped align-middle">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Current Stock</th>
+                <th>Minimum Stock</th>
+                <th>Unit</th>
+                <th>Cost Per Unit</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ingredient in ingredients %}
+            <tr>
+                <td>{{ ingredient.name }}</td>
+                <td>{{ ingredient.category.name }}</td>
+                <td>{{ ingredient.current_stock }}</td>
+                <td>{{ ingredient.minimum_stock }}</td>
+                <td>{{ ingredient.unit }}</td>
+                <td>{{ ingredient.cost_per_unit }}</td>
+                <td>
+                    {% if ingredient.is_low_stock %}
+                        <span class="badge text-bg-warning">Low Stock</span>
+                    {% else %}
+                        <span class="badge text-bg-success">OK</span>
+                    {% endif %}
+                </td>
+                <td>
+                    <a class="btn btn-sm btn-outline-primary" href="{% url 'inventory:ingredient_detail' ingredient.pk %}">View</a>
+                    <a class="btn btn-sm btn-outline-secondary" href="{% url 'inventory:ingredient_update' ingredient.pk %}">Edit</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="8" class="text-center">No ingredients found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

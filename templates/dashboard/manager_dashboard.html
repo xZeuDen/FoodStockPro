@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Manager Dashboard | FoodStockPro{% endblock %}
+
+{% block content %}
+<h1 class="mb-3">Manager Dashboard</h1>
+<p class="lead">Managers can review stock activity, approve kitchen requests, and oversee purchasing decisions.</p>
+
+<div class="row g-4 mt-3">
+    <div class="col-md-4">
+        <div class="card dashboard-card">
+            <div class="card-body">
+                <h2 class="h4">Approvals</h2>
+                <p>Future area for kitchen request approval and rejection.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card dashboard-card">
+            <div class="card-body">
+                <h2 class="h4">Purchase Orders</h2>
+                <p>Future area for managing purchase orders and items.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card dashboard-card">
+            <div class="card-body">
+                <h2 class="h4">Inventory</h2>
+                <p>Future area for stock level summaries.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

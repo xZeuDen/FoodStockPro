@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}PO-{{ purchase_order.id }} | FoodStockPro{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <a class="btn btn-outline-secondary" href="{% url 'purchasing:purchase_order_list' %}">Back to Purchase Orders</a>
+    {% if is_manager %}
+    <a class="btn btn-outline-primary" href="{% url 'purchasing:purchase_order_update' purchase_order.pk %}">Edit PO</a>
+    <a class="btn btn-success" href="{% url 'purchasing:purchase_order_item_create' purchase_order.pk %}">Add Item</a>
+    {% endif %}
+    {% if is_supplier %}
+    <a class="btn btn-warning" href="{% url 'purchasing:supplier_order_update' purchase_order.pk %}">Supplier Update</a>
+    {% endif %}
+</div>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
+        <h1>PO-{{ purchase_order.id }}</h1>
+        <p><strong>Supplier:</strong> {{ purchase_order.supplier.name }}</p>
+        <p><strong>Order date:</strong> {{ purchase_order.order_date }}</p>
+        <p><strong>Expected delivery:</strong> {{ purchase_order.expected_delivery_date|default:"-" }}</p>
+        <p><strong>Status:</strong> {{ purchase_order.get_status_display }}</p>
+        <p><strong>Created by:</strong> {{ purchase_order.created_by|default:"-" }}</p>
+        <p><strong>Notes:</strong> {{ purchase_order.notes|default:"-" }}</p>
+    </div>
+</div>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
+        <h2 class="h4">Supplier Info</h2>
+        <p><strong>Email:</strong> {{ purchase_order.supplier.email }}</p>
+        <p><strong>Phone:</strong> {{ purchase_order.supplier.phone|default:"-" }}</p>
+        <p><strong>Contact:</strong> {{ purchase_order.supplier.contact_name|default:"-" }}</p>
+    </div>
+</div>
+
+<h2 class="mb-3">Purchase Order Items</h2>
+<div class="table-responsive">
+    <table class="table table-striped align-middle">
+        <thead>
+            <tr>
+                <th>Ingredient</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Line Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.ingredient.name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.unit_price }}</td>
+                <td>{{ item.line_total }}</td>
+                <td>
+                    {% if is_manager %}
+                    <a class="btn btn-sm btn-outline-secondary" href="{% url 'purchasing:purchase_order_item_update' item.pk %}">Edit</a>
+                    {% else %}
+                    -
+                    {% endif %}
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5" class="text-center">No items added yet.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="text-end mt-4">
+    <h2 class="h3">Total Cost: {{ purchase_order.total_cost }}</h2>
+</div>
+{% endblock %}

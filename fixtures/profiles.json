@@ -1,0 +1,92 @@
+[
+{
+  "model": "accounts.profile",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "role": "MANAGER",
+    "phone_number": "0852686750",
+    "created_at": "2026-04-27T19:02:32.754Z"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "role": "SUPPLIER",
+    "phone_number": "",
+    "created_at": "2026-04-27T19:03:34.767Z"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 3,
+  "fields": {
+    "user": 3,
+    "role": "KITCHEN",
+    "phone_number": "",
+    "created_at": "2026-04-27T19:04:55.607Z"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 4,
+  "fields": {
+    "user": 4,
+    "role": "FINANCE",
+    "phone_number": "",
+    "created_at": "2026-04-27T19:05:28.117Z"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 5,
+  "fields": {
+    "user": 5,
+    "role": "MANAGER",
+    "phone_number": "",
+    "created_at": "2026-04-27T19:08:29.687Z"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 6,
+  "fields": {
+    "user": 6,
+    "role": "MANAGER",
+    "phone_number": "",
+    "created_at": "2026-04-27T19:35:30.454Z"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 7,
+  "fields": {
+    "user": 7,
+    "role": "KITCHEN",
+    "phone_number": "",
+    "created_at": "2026-04-27T19:35:30.856Z"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 8,
+  "fields": {
+    "user": 8,
+    "role": "SUPPLIER",
+    "phone_number": "",
+    "created_at": "2026-04-27T19:35:31.278Z"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 9,
+  "fields": {
+    "user": 9,
+    "role": "FINANCE",
+    "phone_number": "",
+    "created_at": "2026-04-27T19:35:31.694Z"
+  }
+}
+]
